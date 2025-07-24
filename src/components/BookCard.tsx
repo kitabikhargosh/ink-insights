@@ -5,8 +5,8 @@ import { Card, CardContent } from './ui/card';
 interface BookCardProps {
   title: string;
   author: string;
-  price: string;
-  originalPrice?: string;
+  price: number;
+  originalPrice?: number;
   rating: number;
   image: string;
   badge?: string;
@@ -79,11 +79,11 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <span className="text-book-primary font-bold text-lg">
-                {price}
+                ₹{price}
               </span>
               {originalPrice && (
                 <span className="text-muted-foreground line-through text-sm">
-                  {originalPrice}
+                  ₹{originalPrice}
                 </span>
               )}
             </div>

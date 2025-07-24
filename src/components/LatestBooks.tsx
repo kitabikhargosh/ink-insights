@@ -12,8 +12,8 @@ const LatestBooks = () => {
     {
       title: "Creative Life",
       author: "John Smith",
-      price: "$39.99",
-      originalPrice: "$49.99",
+      price: 899,
+      originalPrice: 1199,
       rating: 5,
       image: book1,
       badge: "New",
@@ -22,14 +22,14 @@ const LatestBooks = () => {
     {
       title: "Bulle & Pelle",
       author: "Marie Johnson",
-      price: "$24.99",
+      price: 550,
       rating: 4,
       image: book2
     },
     {
       title: "Enemy - Jake Gyllenhaal",
       author: "David Wilson",
-      price: "$32.99",
+      price: 750,
       rating: 5,
       image: book3,
       badge: "Bestseller"
@@ -37,8 +37,8 @@ const LatestBooks = () => {
     {
       title: "Peter and the Wolf",
       author: "Classic Tales",
-      price: "$19.99",
-      originalPrice: "$29.99",
+      price: 450,
+      originalPrice: 650,
       rating: 4,
       image: book4,
       onSale: true
