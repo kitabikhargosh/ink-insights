@@ -1,5 +1,7 @@
 import BookCard from './BookCard';
 import { Button } from './ui/button';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import Autoplay from 'embla-carousel-auto-scroll';
 import book1 from '../assets/book1.jpg';
 import book2 from '../assets/book2.jpg';
 import book3 from '../assets/book3.jpg';
@@ -53,24 +55,35 @@ const LatestBooks = () => {
             Our Latest Books
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, 
-            luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Discover our newest collection of books with fresh stories, amazing authors, 
+            and captivating narratives that will keep you turning pages.
           </p>
         </div>
 
-        {/* Books Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {books.map((book, index) => (
-            <BookCard key={index} {...book} />
-          ))}
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="flex justify-center space-x-2 mb-8">
-          <div className="w-3 h-3 rounded-full bg-book-primary"></div>
-          <div className="w-3 h-3 rounded-full bg-gray-300"></div>
-          <div className="w-3 h-3 rounded-full bg-gray-300"></div>
-        </div>
+        {/* Books Carousel */}
+        <Carousel
+          className="w-full"
+          plugins={[
+            Autoplay({
+              speed: 1,
+              startDelay: 0,
+            }),
+          ]}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {books.map((book, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4">
+                <BookCard {...book} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   );

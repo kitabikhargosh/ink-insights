@@ -1,4 +1,4 @@
-import { MessageSquare, Award, Edit, ShoppingBag } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 
 const ServicesSection = () => {
@@ -6,23 +6,8 @@ const ServicesSection = () => {
     {
       icon: MessageSquare,
       title: "Book Club",
-      description: "Aliquam auctor porttitor tortor adipiscing eu ridiculus.",
+      description: "Join our vibrant community of book lovers and discover amazing stories together.",
       bgColor: "bg-book-primary"
-    },
-    {
-      icon: Award,
-      title: "Publishing",
-      description: "Aliquam auctor porttitor tortor adipiscing eu ridiculus ullamcorper."
-    },
-    {
-      icon: Edit,
-      title: "Editing",
-      description: "Aliquam auctor porttitor tortor adipiscing eu ridiculus ullamcorper."
-    },
-    {
-      icon: ShoppingBag,
-      title: "Selling Book",
-      description: "Aliquam auctor porttitor tortor adipiscing eu ridiculus ullamcorper."
     }
   ];
 
@@ -42,7 +27,8 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex justify-center">
+          <div className="max-w-md">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -76,6 +62,7 @@ const ServicesSection = () => {
               </Card>
             );
           })}
+          </div>
         </div>
       </div>
     </section>
