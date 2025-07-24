@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				book: {
+					primary: 'hsl(var(--book-primary))',
+					secondary: 'hsl(var(--book-secondary))',
+					warm: 'hsl(var(--book-warm))',
+					text: 'hsl(var(--book-text))',
+					accent: 'hsl(var(--book-accent))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
