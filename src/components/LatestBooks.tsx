@@ -1,7 +1,5 @@
 import BookCard from './BookCard';
-import { Button } from './ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
-import Autoplay from 'embla-carousel-auto-scroll';
 import book1 from '../assets/book1.jpg';
 import book2 from '../assets/book2.jpg';
 import book3 from '../assets/book3.jpg';
@@ -61,19 +59,8 @@ const LatestBooks = () => {
         </div>
 
         {/* Books Carousel */}
-        <Carousel
-          className="w-full"
-          plugins={[
-            Autoplay({
-              speed: 1,
-              startDelay: 0,
-            }),
-          ]}
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-        >
+     
+  
           <CarouselContent className="-ml-2 md:-ml-4">
             {books.map((book, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4">
@@ -83,7 +70,7 @@ const LatestBooks = () => {
           </CarouselContent>
           <CarouselPrevious className="hidden md:flex" />
           <CarouselNext className="hidden md:flex" />
-        </Carousel>
+        
       </div>
     </section>
   );

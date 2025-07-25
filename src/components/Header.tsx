@@ -22,7 +22,7 @@ const Header = () => {
               />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-book-text">BookReviews</h1>
+              <h1 className="text-xl font-bold text-book-text">Kitabi Khargosh</h1>
               <p className="text-xs text-muted-foreground">Best Author and Book Reviews</p>
             </div>
           </div>

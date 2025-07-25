@@ -32,7 +32,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <label className="text-sm font-medium text-book-text mb-2 block">Email</label>
-                    <Input type="email" placeholder="your.email@example.com" />
+                    <Input type="email" placeholder="kitabikhargosh@gmail.com" />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-book-text mb-2 block">Subject</label>
@@ -59,7 +59,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-book-text">Email Us</h3>
-                      <p className="text-muted-foreground">hello@bookreviews.com</p>
+                      <p className="text-muted-foreground">kitabikhargosh@gmail.com</p>
                     </div>
                   </div>
                 </CardContent>
@@ -73,7 +73,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-book-text">Call Us</h3>
-                      <p className="text-muted-foreground">+91 98765 43210</p>
+                      <p className="text-muted-foreground">+91 9669905309</p>
                     </div>
                   </div>
                 </CardContent>
@@ -87,7 +87,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-book-text">Visit Us</h3>
-                      <p className="text-muted-foreground">Mumbai, Maharashtra, India</p>
+                      <p className="text-muted-foreground"> Bhopal, Madhya Pradesh, India</p>
                     </div>
                   </div>
                 </CardContent>

@@ -28,15 +28,10 @@ type CarouselContextProps = {
   canScrollNext: boolean
 } & CarouselProps
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null)
+const CarouselContext = React.createContext<CarouselContextProps | undefined>(undefined)
 
 function useCarousel() {
   const context = React.useContext(CarouselContext)
-
-  if (!context) {
-    throw new Error("useCarousel must be used within a <Carousel />")
-  }
-
   return context
 }
 
@@ -152,7 +147,14 @@ const CarouselContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const { carouselRef, orientation } = useCarousel()
+  const carousel = useCarousel()
+  if (!carousel) {
+    // If not inside a Carousel, render children as-is (no error thrown)
+    return (
+      <div ref={ref} className={cn("flex", className)} {...props} />
+    )
+  }
+  const { carouselRef, orientation } = carousel
 
   return (
     <div ref={carouselRef} className="overflow-hidden">
@@ -174,7 +176,18 @@ const CarouselItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const { orientation } = useCarousel()
+  const carousel = useCarousel()
+  if (!carousel) {
+    // If not inside a Carousel, render children as-is (no error thrown)
+    return (
+      <div
+        ref={ref}
+        className={cn("min-w-0 shrink-0 grow-0 basis-full", className)}
+        {...props}
+      />
+    )
+  }
+  const { orientation } = carousel
 
   return (
     <div
@@ -196,7 +209,24 @@ const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  const carousel = useCarousel()
+  if (!carousel) {
+    // If not inside a Carousel, render a disabled button
+    return (
+      <Button
+        ref={ref}
+        variant={variant}
+        size={size}
+        className={cn("absolute h-8 w-8 rounded-full", className)}
+        disabled
+        {...props}
+      >
+        <ArrowLeft className="h-4 w-4" />
+        <span className="sr-only">Previous slide</span>
+      </Button>
+    )
+  }
+  const { orientation, scrollPrev, canScrollPrev } = carousel
 
   return (
     <Button
@@ -225,7 +255,24 @@ const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel()
+  const carousel = useCarousel()
+  if (!carousel) {
+    // If not inside a Carousel, render a disabled button
+    return (
+      <Button
+        ref={ref}
+        variant={variant}
+        size={size}
+        className={cn("absolute h-8 w-8 rounded-full", className)}
+        disabled
+        {...props}
+      >
+        <ArrowRight className="h-4 w-4" />
+        <span className="sr-only">Next slide</span>
+      </Button>
+    )
+  }
+  const { orientation, scrollNext, canScrollNext } = carousel
 
   return (
     <Button

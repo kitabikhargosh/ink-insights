@@ -1,5 +1,5 @@
 import { Button } from './ui/button';
-import { Play } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import heroBackground from '../assets/hero-background.jpg';
 
 const Hero = () => {
@@ -18,22 +18,20 @@ const Hero = () => {
         <div className="max-w-2xl">
           {/* Category Badge */}
           <div className="inline-flex items-center space-x-2 mb-4">
-            <Play className="h-4 w-4 text-book-primary" />
+            <BookOpen className="h-4 w-4 text-book-primary" />
             <span className="text-book-primary text-sm font-medium uppercase tracking-wide">
-              History
+              Book Reviewer
             </span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Buy History & Novel
+            100+ Books Read & Reviewed
           </h1>
 
           {/* Description */}
           <p className="text-lg text-white/90 mb-8 leading-relaxed">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem totam rem 
-            aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae vitae dicta 
-            sunt explicabo.
+            Dive into honest, insightful reviews from a passionate reader who has explored over a hundred books. Discover your next great read and join a community of fellow book lovers!
           </p>
 
           {/* CTA Button */}
@@ -41,7 +39,7 @@ const Hero = () => {
             size="lg" 
             className="bg-book-primary hover:bg-book-primary/90 text-white px-8 py-3 text-lg font-medium"
           >
-            Buy Now
+            Read Reviews
           </Button>
         </div>
       </div>

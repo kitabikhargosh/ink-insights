@@ -14,7 +14,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-white font-medium">Book Information?</p>
-                <p className="text-white/70 text-sm">Please send us an email at support@bookreview.ltd</p>
+                <p className="text-white/70 text-sm">Please send us an email at kitabikhargosh@gmail.com </p>
               </div>
             </div>
             
@@ -24,7 +24,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-white font-medium">Need Help?</p>
-                <p className="text-white/70 text-sm">Please call us at +6221-1000-1212</p>
+              <p className="text-white/70 text-sm">Please call us at +91 9669905309</p>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">B</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">BookReviews</h3>
+                <h3 className="text-xl font-bold">Kitabi Khargosh</h3>
                 <p className="text-xs text-white/70">Best Author and Book Reviews</p>
               </div>
             </div>
@@ -103,7 +103,7 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-4">
           <p className="text-center text-white/70 text-sm">
-            Copyright © 2025 | Lumen Studio
+            Copyright © 2025 | Developed by: Taniya Nanwani  
           </p>
         </div>
       </div>
