@@ -1,4 +1,4 @@
-import { Star, Heart, ShoppingCart } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 
@@ -43,10 +43,10 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
             </div>
           )}
 
-          {/* Quick Actions */}
-          <div className="absolute bottom-2 left-2 right-2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <Button size="sm" className="flex-1 bg-book-primary hover:bg-book-primary/90">
-              <ShoppingCart className="h-4 w-4 mr-1" />
+          {/* Affiliate Link Button */}
+          <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <Button size="sm" className="w-full bg-book-primary hover:bg-book-primary/90">
+              <ExternalLink className="h-4 w-4 mr-1" />
               Buy Now - Affiliate Link
             </Button>
           </div>
@@ -61,22 +61,10 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
             {author}
           </p>
 
-          {/* Rating */}
-          <div className="flex items-center space-x-1 mb-3">
-            {renderStars(rating)}
-          </div>
-
-          {/* Price */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <span className="text-book-primary font-bold text-lg">
-                ₹{price}
-              </span>
-              {originalPrice && (
-                <span className="text-muted-foreground line-through text-sm">
-                  ₹{originalPrice}
-                </span>
-              )}
+          {/* Price and Rating */}
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center space-x-1">
+              {renderStars(rating)}
             </div>
             {onSale && (
               <span className="text-xs text-book-primary font-medium">
@@ -84,6 +72,24 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
               </span>
             )}
           </div>
+
+          {/* Price */}
+          <div className="flex items-center space-x-2 mb-4">
+            <span className="text-book-primary font-bold text-lg">
+              ₹{price}
+            </span>
+            {originalPrice && (
+              <span className="text-muted-foreground line-through text-sm">
+                ₹{originalPrice}
+              </span>
+            )}
+          </div>
+
+          {/* Affiliate Button */}
+          <Button size="sm" className="w-full bg-book-primary hover:bg-book-primary/90">
+            <ExternalLink className="h-4 w-4 mr-1" />
+            Buy Now
+          </Button>
         </div>
       </CardContent>
     </Card>

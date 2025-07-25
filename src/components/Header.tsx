@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, ShoppingCart, User, Menu, X } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import logo from '../assets/logo.png';
@@ -39,16 +39,8 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Right Icons */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-book-primary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                2
-              </span>
-            </Button>
-            
-            {/* Mobile menu button */}
+          {/* Mobile menu button */}
+          <div className="flex items-center">
             <Button 
               variant="ghost" 
               size="icon"

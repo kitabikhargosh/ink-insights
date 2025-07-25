@@ -1,4 +1,4 @@
-import { Mail, Phone, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Mail, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Footer = () => {
@@ -23,22 +23,22 @@ const Footer = () => {
 
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center md:justify-items-start">
           {/* Brand */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start space-x-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-book-primary to-book-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
+                <span className="text-white font-bold text-lg">K</span>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Kitabi Khargosh</h3>
                 <p className="text-xs text-white/70">Best Author and Book Reviews</p>
               </div>
             </div>
-            <p className="text-white/70 text-sm mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.
+            <p className="text-white/70 text-sm mb-6 max-w-sm mx-auto md:mx-0">
+              Discover amazing books, read authentic reviews, and explore the world of literature with us.
             </p>
-            <div className="flex space-x-2">
+            <div className="flex justify-center md:justify-start space-x-2">
               <Button variant="ghost" size="icon" className="bg-book-primary hover:bg-book-primary/90">
                 <Facebook className="h-4 w-4" />
               </Button>
@@ -55,22 +55,24 @@ const Footer = () => {
           </div>
 
           {/* About Author */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">About Author</h4>
+          <div className="text-center md:text-left">
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-white/70 text-sm">
               <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="/blog" className="hover:text-white transition-colors">Blogs</a></li>
+              <li><a href="/reviews" className="hover:text-white transition-colors">Reviews</a></li>
+              <li><a href="/authors" className="hover:text-white transition-colors">Authors</a></li>
             </ul>
           </div>
 
-          {/* Terms */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Terms</h4>
+          {/* Legal */}
+          <div className="text-center md:text-left">
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-white/70 text-sm">
               <li><a href="/terms" className="hover:text-white transition-colors">Terms of Use</a></li>
               <li><a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a></li>
               <li><a href="/cookies" className="hover:text-white transition-colors">Cookie Policy</a></li>
-              <li><a href="/personal-info" className="hover:text-white transition-colors">Do Not Sell My Personal Info</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
         </div>
