@@ -43,20 +43,11 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
             </div>
           )}
 
-          {/* Wishlist Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-2 right-2 bg-white/80 hover:bg-white text-book-text"
-          >
-            <Heart className="h-4 w-4" />
-          </Button>
-
           {/* Quick Actions */}
           <div className="absolute bottom-2 left-2 right-2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Button size="sm" className="flex-1 bg-book-primary hover:bg-book-primary/90">
               <ShoppingCart className="h-4 w-4 mr-1" />
-              Add to Cart
+              Buy Now - Affiliate Link
             </Button>
           </div>
         </div>

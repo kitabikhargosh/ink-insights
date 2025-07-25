@@ -41,9 +41,6 @@ const Header = () => {
 
           {/* Right Icons */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hidden md:flex">
-              <User className="h-5 w-5" />
-            </Button>
             <Button variant="ghost" size="icon" className="relative">
               <ShoppingCart className="h-5 w-5" />
               <span className="absolute -top-1 -right-1 bg-book-primary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -80,8 +77,8 @@ const Header = () => {
           <a href="/blog" className="text-book-text hover:text-book-primary transition-colors">
             Blog
           </a>
-          <a href="/shop" className="text-book-text hover:text-book-primary transition-colors">
-            Shop
+          <a href="/categories" className="text-book-text hover:text-book-primary transition-colors">
+            Book Categories
           </a>
           <a href="/about" className="text-book-text hover:text-book-primary transition-colors">
             About Us
@@ -116,8 +113,8 @@ const Header = () => {
             <a href="/blog" className="block py-2 text-book-text hover:text-book-primary transition-colors">
               Blog
             </a>
-            <a href="/shop" className="block py-2 text-book-text hover:text-book-primary transition-colors">
-              Shop
+            <a href="/categories" className="block py-2 text-book-text hover:text-book-primary transition-colors">
+              Book Categories
             </a>
             <a href="/about" className="block py-2 text-book-text hover:text-book-primary transition-colors">
               About Us
