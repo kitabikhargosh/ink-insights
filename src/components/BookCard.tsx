@@ -5,16 +5,13 @@ import { Card, CardContent } from './ui/card';
 interface BookCardProps {
   title: string;
   author: string;
-  price?: number;
-  originalPrice?: number;
   rating: number;
   image: string;
   badge?: string;
-  onSale?: boolean;
   description?: string;
 }
 
-const BookCard = ({ title, author, price, originalPrice, rating, image, badge, onSale, description }: BookCardProps) => {
+const BookCard = ({ title, author, rating, image, badge, description }: BookCardProps) => {
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -67,11 +64,6 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
             <div className="flex items-center space-x-1">
               {renderStars(rating)}
             </div>
-            {onSale && (
-              <span className="text-xs text-book-primary font-medium">
-                ON SALE
-              </span>
-            )}
           </div>
 
           {/* Description */}
@@ -79,20 +71,6 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
             <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
               {description}
             </p>
-          )}
-          
-          {/* Price - Only show if provided */}
-          {price && (
-            <div className="flex items-center space-x-2 mb-4">
-              <span className="text-book-primary font-bold text-lg">
-                ₹{price}
-              </span>
-              {originalPrice && (
-                <span className="text-muted-foreground line-through text-sm">
-                  ₹{originalPrice}
-                </span>
-              )}
-            </div>
           )}
 
           {/* Affiliate Button */}
