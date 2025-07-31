@@ -69,7 +69,7 @@ const Header = () => {
           <a href="/blog" className="text-book-text hover:text-book-primary transition-colors">
             Blog
           </a>
-          <a href="/categories" className="text-book-text hover:text-book-primary transition-colors">
+          <a href="/book-categories" className="text-book-text hover:text-book-primary transition-colors">
             Book Categories
           </a>
           <a href="/about" className="text-book-text hover:text-book-primary transition-colors">
@@ -105,7 +105,7 @@ const Header = () => {
             <a href="/blog" className="block py-2 text-book-text hover:text-book-primary transition-colors">
               Blog
             </a>
-            <a href="/categories" className="block py-2 text-book-text hover:text-book-primary transition-colors">
+            <a href="/book-categories" className="block py-2 text-book-text hover:text-book-primary transition-colors">
               Book Categories
             </a>
             <a href="/about" className="block py-2 text-book-text hover:text-book-primary transition-colors">

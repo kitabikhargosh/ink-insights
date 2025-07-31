@@ -9,9 +9,9 @@ const WeeklyQuote = () => {
           <CardContent className="p-8 text-center">
             <Quote className="h-12 w-12 text-white/80 mx-auto mb-4" />
             <blockquote className="text-xl md:text-2xl font-medium mb-4">
-              "A reader lives a thousand lives before he dies. The man who never reads lives only one."
+              "The more that you read, the more things you will know. The more that you learn, the more places you'll go."
             </blockquote>
-            <cite className="text-white/80">— George R.R. Martin</cite>
+            <cite className="text-white/80">— Dr. Seuss</cite>
             <div className="mt-4">
               <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
                 Quote of the Week

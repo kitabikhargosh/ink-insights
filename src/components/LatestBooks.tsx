@@ -8,38 +8,36 @@ import book4 from '../assets/book4.jpg';
 const LatestBooks = () => {
   const books = [
     {
-      title: "Creative Life",
-      author: "John Smith",
-      price: 899,
-      originalPrice: 1199,
+      title: "The Thursday Murder Club",
+      author: "Richard Osman",
       rating: 5,
       image: book1,
-      badge: "New",
-      onSale: true
+      badge: "New Release",
+      description: "A thrilling mystery in a retirement village"
     },
     {
-      title: "Bulle & Pelle",
-      author: "Marie Johnson",
-      price: 550,
+      title: "Klara and the Sun",
+      author: "Kazuo Ishiguro",
       rating: 4,
-      image: book2
+      image: book2,
+      badge: "Award Winner",
+      description: "A beautiful story about artificial intelligence and love"
     },
     {
-      title: "Enemy - Jake Gyllenhaal",
-      author: "David Wilson",
-      price: 750,
+      title: "The Midnight Library",
+      author: "Matt Haig",
       rating: 5,
       image: book3,
-      badge: "Bestseller"
+      badge: "Bestseller",
+      description: "A magical novel about life's infinite possibilities"
     },
     {
-      title: "Peter and the Wolf",
-      author: "Classic Tales",
-      price: 450,
-      originalPrice: 650,
+      title: "Hamnet",
+      author: "Maggie O'Farrell",
       rating: 4,
       image: book4,
-      onSale: true
+      badge: "Critics' Choice",
+      description: "A powerful reimagining of Shakespeare's family tragedy"
     }
   ];
 
@@ -59,8 +57,7 @@ const LatestBooks = () => {
         </div>
 
         {/* Books Carousel */}
-     
-  
+        <Carousel className="w-full">
           <CarouselContent className="-ml-2 md:-ml-4">
             {books.map((book, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4">
@@ -70,6 +67,7 @@ const LatestBooks = () => {
           </CarouselContent>
           <CarouselPrevious className="hidden md:flex" />
           <CarouselNext className="hidden md:flex" />
+        </Carousel>
         
       </div>
     </section>

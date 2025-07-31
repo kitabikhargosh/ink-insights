@@ -13,8 +13,8 @@ export function DatabaseTest() {
   const handleTestConnection = async () => {
     setTestResult('');
     try {
-      const result = await testConnection();
-      setTestResult(result ? 'Connection successful!' : 'Connection failed!');
+      await testConnection();
+      setTestResult('Connection test completed!');
     } catch (err) {
       setTestResult(`Error: ${err instanceof Error ? err.message : 'Unknown error'}`);
     }

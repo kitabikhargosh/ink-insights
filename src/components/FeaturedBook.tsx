@@ -11,11 +11,12 @@ const FeaturedBook = () => {
           <div>
             <p className="text-book-primary font-medium mb-2">Featured</p>
             <h2 className="text-3xl md:text-4xl font-bold text-book-text mb-6">
-              Weekly Best Seller.
+              Weekly Bestseller: The Seven Moons of Maali Almeida
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, 
-              luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              Winner of the 2022 Booker Prize, this extraordinary novel follows a war photographer 
+              who must solve his own murder from the afterlife. A brilliant blend of magical realism, 
+              dark humor, and profound insight into humanity's capacity for both cruelty and compassion.
             </p>
             
             <Button 

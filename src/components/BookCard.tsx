@@ -5,15 +5,16 @@ import { Card, CardContent } from './ui/card';
 interface BookCardProps {
   title: string;
   author: string;
-  price: number;
+  price?: number;
   originalPrice?: number;
   rating: number;
   image: string;
   badge?: string;
   onSale?: boolean;
+  description?: string;
 }
 
-const BookCard = ({ title, author, price, originalPrice, rating, image, badge, onSale }: BookCardProps) => {
+const BookCard = ({ title, author, price, originalPrice, rating, image, badge, onSale, description }: BookCardProps) => {
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -73,17 +74,26 @@ const BookCard = ({ title, author, price, originalPrice, rating, image, badge, o
             )}
           </div>
 
-          {/* Price */}
-          <div className="flex items-center space-x-2 mb-4">
-            <span className="text-book-primary font-bold text-lg">
-              ₹{price}
-            </span>
-            {originalPrice && (
-              <span className="text-muted-foreground line-through text-sm">
-                ₹{originalPrice}
+          {/* Description */}
+          {description && (
+            <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+              {description}
+            </p>
+          )}
+          
+          {/* Price - Only show if provided */}
+          {price && (
+            <div className="flex items-center space-x-2 mb-4">
+              <span className="text-book-primary font-bold text-lg">
+                ₹{price}
               </span>
-            )}
-          </div>
+              {originalPrice && (
+                <span className="text-muted-foreground line-through text-sm">
+                  ₹{originalPrice}
+                </span>
+              )}
+            </div>
+          )}
 
           {/* Affiliate Button */}
           <Button size="sm" className="w-full bg-book-primary hover:bg-book-primary/90">
