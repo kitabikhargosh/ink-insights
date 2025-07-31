@@ -8,6 +8,7 @@ import AuthorSpotlight from '../components/AuthorSpotlight';
 import WeeklyQuote from '../components/WeeklyQuote';
 import NewsletterSignup from '../components/NewsletterSignup';
 import Footer from '../components/Footer';
+import { DatabaseTest } from '../components/DatabaseTest';
 
 const Index = () => {
   return (
@@ -21,8 +22,9 @@ const Index = () => {
       <ServicesSection />
       <TestimonialsSection />
       <AuthorSpotlight />
-      
-      
+      <div className="container mx-auto px-4 py-8">
+        <DatabaseTest />
+      </div>
       <Footer />
     </div>
   );
