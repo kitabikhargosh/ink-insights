@@ -11,8 +11,11 @@ export async function uploadImageToCloudinary(file: File, folder = 'ink-insights
   formData.append('folder', folder);
 
   try {
-    const response = await fetch('/functions/v1/upload-image', {
+    const response = await fetch('https://kysxtuvuyqgcatwoapmk.supabase.co/functions/v1/upload-image', {
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt5c3h0dXZ1eXFnY2F0d29hcG1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI4MzcyMDIsImV4cCI6MjA2ODQxMzIwMn0.5zERNnNKggBbFms-IDHwbF6k-ehw-8sN0-uYHR7sNSk`,
+      },
       body: formData,
     });
 
