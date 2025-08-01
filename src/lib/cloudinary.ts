@@ -4,28 +4,28 @@ export const CLOUDINARY_CONFIG = {
   apiKey: '835176438542863'
 };
 
-// Upload image to Cloudinary
+// Upload image to Cloudinary via secure Edge Function
 export async function uploadImageToCloudinary(file: File, folder = 'ink-insights'): Promise<string> {
   const formData = new FormData();
   formData.append('file', file);
-  formData.append('upload_preset', 'unsigned_preset'); // You'll need to create this in Cloudinary
   formData.append('folder', folder);
 
   try {
-    const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${CLOUDINARY_CONFIG.cloudName}/image/upload`,
-      {
-        method: 'POST',
-        body: formData,
-      }
-    );
+    const response = await fetch('/functions/v1/upload-image', {
+      method: 'POST',
+      body: formData,
+    });
 
     if (!response.ok) {
       throw new Error('Failed to upload image');
     }
 
     const data = await response.json();
-    return data.secure_url;
+    if (!data.success) {
+      throw new Error(data.error || 'Upload failed');
+    }
+
+    return data.url;
   } catch (error) {
     console.error('Error uploading to Cloudinary:', error);
     throw error;
