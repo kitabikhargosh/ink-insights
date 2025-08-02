@@ -1,26 +1,9 @@
-import { Mail, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Footer = () => {
   return (
     <footer className="bg-book-text text-white">
-      {/* Contact Info Bar */}
-      <div className="border-b border-white/10">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex justify-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-book-primary rounded-lg flex items-center justify-center">
-                <Mail className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <p className="text-white font-medium">Book Information?</p>
-                <p className="text-white/70 text-sm">Please send us an email at kitabikhargosh@gmail.com </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center md:justify-items-start">
@@ -65,14 +48,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Categories */}
           <div className="text-center md:text-left">
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-white font-semibold mb-4">Categories</h4>
             <ul className="space-y-2 text-white/70 text-sm">
-              <li><a href="/terms" className="hover:text-white transition-colors">Terms of Use</a></li>
-              <li><a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="/cookies" className="hover:text-white transition-colors">Cookie Policy</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="/book-categories" className="hover:text-white transition-colors">Fiction</a></li>
+              <li><a href="/book-categories" className="hover:text-white transition-colors">Non-Fiction</a></li>
+              <li><a href="/book-categories" className="hover:text-white transition-colors">Mystery</a></li>
+              <li><a href="/book-categories" className="hover:text-white transition-colors">Romance</a></li>
             </ul>
           </div>
         </div>
