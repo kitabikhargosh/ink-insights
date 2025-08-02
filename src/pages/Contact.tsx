@@ -4,7 +4,7 @@ import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Button } from '../components/ui/button';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -69,25 +69,11 @@ const Contact = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-book-primary/10 rounded-lg flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-book-primary" />
+                      <Mail className="h-6 w-6 text-book-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-book-text">Call Us</h3>
-                      <p className="text-muted-foreground">+91 9669905309</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-book-primary/10 rounded-lg flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-book-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-book-text">Visit Us</h3>
-                      <p className="text-muted-foreground"> Bhopal, Madhya Pradesh, India</p>
+                      <h3 className="font-semibold text-book-text">Follow Us</h3>
+                      <p className="text-muted-foreground">Stay updated with our latest book reviews</p>
                     </div>
                   </div>
                 </CardContent>
