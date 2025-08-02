@@ -1,6 +1,7 @@
 import { Star, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
+import { useNavigate } from 'react-router-dom';
 
 interface BookCardProps {
   title: string;
@@ -9,9 +10,11 @@ interface BookCardProps {
   image: string;
   badge?: string;
   description?: string;
+  id?: string;
 }
 
-const BookCard = ({ title, author, rating, image, badge, description }: BookCardProps) => {
+const BookCard = ({ title, author, rating, image, badge, description, id }: BookCardProps) => {
+  const navigate = useNavigate();
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -23,8 +26,12 @@ const BookCard = ({ title, author, rating, image, badge, description }: BookCard
     ));
   };
 
+  const handleCardClick = () => {
+    navigate('/reviews', { state: { selectedBook: { id, title, author, rating, image, badge, description } } });
+  };
+
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-border">
+    <Card className="group hover:shadow-lg transition-all duration-300 border-border cursor-pointer" onClick={handleCardClick}>
       <CardContent className="p-0">
         {/* Image Container */}
         <div className="relative overflow-hidden rounded-t-lg">

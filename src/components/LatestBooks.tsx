@@ -66,7 +66,8 @@ const LatestBooks = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {books.map((book) => (
                 <CarouselItem key={book.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4">
-                  <BookCard 
+                   <BookCard 
+                    id={book.id}
                     title={book.title}
                     author={book.author}
                     rating={book.rating}
