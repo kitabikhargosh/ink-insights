@@ -14,6 +14,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BookCategories from "./pages/BookCategories";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import QuotesManager from "./pages/admin/QuotesManager";
+import HeroManager from "./pages/admin/HeroManager";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +38,10 @@ const App = () => (
           <Route path="/book-categories" element={<BookCategories />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/quotes" element={<QuotesManager />} />
+          <Route path="/admin/hero" element={<HeroManager />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
