@@ -53,28 +53,70 @@ export type Database = {
       authors: {
         Row: {
           bio: string | null
+          books_published: number | null
           created_at: string
           id: string
           image_url: string | null
           is_spotlight: boolean | null
+          known_for: string | null
           name: string
+          top_books: string[] | null
           updated_at: string
         }
         Insert: {
           bio?: string | null
+          books_published?: number | null
           created_at?: string
           id?: string
           image_url?: string | null
           is_spotlight?: boolean | null
+          known_for?: string | null
           name: string
+          top_books?: string[] | null
           updated_at?: string
         }
         Update: {
           bio?: string | null
+          books_published?: number | null
           created_at?: string
           id?: string
           image_url?: string | null
           is_spotlight?: boolean | null
+          known_for?: string | null
+          name?: string
+          top_books?: string[] | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      book_genres: {
+        Row: {
+          color: string | null
+          created_at: string
+          description: string | null
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
           name?: string
           updated_at?: string
         }
@@ -129,37 +171,49 @@ export type Database = {
       }
       books: {
         Row: {
+          affiliate_link: string | null
           author: string
           category: string | null
           created_at: string
           description: string | null
+          genre: string | null
           id: string
           image_url: string | null
           is_featured: boolean | null
+          isbn: string | null
+          price: number | null
           rating: number | null
           title: string
           updated_at: string
         }
         Insert: {
+          affiliate_link?: string | null
           author: string
           category?: string | null
           created_at?: string
           description?: string | null
+          genre?: string | null
           id?: string
           image_url?: string | null
           is_featured?: boolean | null
+          isbn?: string | null
+          price?: number | null
           rating?: number | null
           title: string
           updated_at?: string
         }
         Update: {
+          affiliate_link?: string | null
           author?: string
           category?: string | null
           created_at?: string
           description?: string | null
+          genre?: string | null
           id?: string
           image_url?: string | null
           is_featured?: boolean | null
+          isbn?: string | null
+          price?: number | null
           rating?: number | null
           title?: string
           updated_at?: string

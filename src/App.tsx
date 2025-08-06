@@ -18,6 +18,11 @@ import AdminLogin from "./components/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import QuotesManager from "./pages/admin/QuotesManager";
 import HeroManager from "./pages/admin/HeroManager";
+import FeaturedManager from "./pages/admin/FeaturedManager";
+import BooksManager from "./pages/admin/BooksManager";
+import AuthorsManager from "./pages/admin/AuthorsManager";
+import ReviewsManager from "./pages/admin/ReviewsManager";
+import SiteSettingsManager from "./pages/admin/SiteSettingsManager";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +47,11 @@ const App = () => (
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/quotes" element={<QuotesManager />} />
           <Route path="/admin/hero" element={<HeroManager />} />
+          <Route path="/admin/featured" element={<FeaturedManager />} />
+          <Route path="/admin/books" element={<BooksManager />} />
+          <Route path="/admin/authors" element={<AuthorsManager />} />
+          <Route path="/admin/reviews" element={<ReviewsManager />} />
+          <Route path="/admin/settings" element={<SiteSettingsManager />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
