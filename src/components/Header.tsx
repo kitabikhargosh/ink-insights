@@ -1,11 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import { supabase } from '@/integrations/supabase/client';
 import logo from '../assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [siteName, setSiteName] = useState('Kitabi Khargosh');
+  const [siteTagline, setSiteTagline] = useState('Best Author and Book Reviews');
+
+  useEffect(() => {
+    fetchSiteSettings();
+  }, []);
+
+  const fetchSiteSettings = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('site_settings')
+        .select('setting_key, setting_value')
+        .in('setting_key', ['site_name', 'site_tagline']);
+
+      if (error) throw error;
+
+      data?.forEach((setting) => {
+        if (setting.setting_key === 'site_name' && setting.setting_value) {
+          setSiteName(setting.setting_value);
+        }
+        if (setting.setting_key === 'site_tagline' && setting.setting_value) {
+          setSiteTagline(setting.setting_value);
+        }
+      });
+    } catch (error) {
+      console.error('Error fetching site settings:', error);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
@@ -22,8 +51,8 @@ const Header = () => {
               />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-book-text">Kitabi Khargosh</h1>
-              <p className="text-xs text-muted-foreground">Best Author and Book Reviews</p>
+              <h1 className="text-xl font-bold text-book-text">{siteName}</h1>
+              <p className="text-xs text-muted-foreground">{siteTagline}</p>
             </div>
           </div>
 

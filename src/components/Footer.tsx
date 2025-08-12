@@ -1,7 +1,45 @@
+import { useState, useEffect } from 'react';
 import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { Button } from './ui/button';
+import { supabase } from '@/integrations/supabase/client';
 
 const Footer = () => {
+  const [siteName, setSiteName] = useState('Kitabi Khargosh');
+  const [siteTagline, setSiteTagline] = useState('Best Author and Book Reviews');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
+
+  useEffect(() => {
+    fetchSiteSettings();
+  }, []);
+
+  const fetchSiteSettings = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('site_settings')
+        .select('setting_key, setting_value')
+        .in('setting_key', ['site_name', 'site_tagline', 'contact_email', 'contact_phone']);
+
+      if (error) throw error;
+
+      data?.forEach((setting) => {
+        if (setting.setting_key === 'site_name' && setting.setting_value) {
+          setSiteName(setting.setting_value);
+        }
+        if (setting.setting_key === 'site_tagline' && setting.setting_value) {
+          setSiteTagline(setting.setting_value);
+        }
+        if (setting.setting_key === 'contact_email' && setting.setting_value) {
+          setContactEmail(setting.setting_value);
+        }
+        if (setting.setting_key === 'contact_phone' && setting.setting_value) {
+          setContactPhone(setting.setting_value);
+        }
+      });
+    } catch (error) {
+      console.error('Error fetching site settings:', error);
+    }
+  };
   return (
     <footer className="bg-book-text text-white">
       {/* Main Footer */}
@@ -14,8 +52,8 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">K</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Kitabi Khargosh</h3>
-                <p className="text-xs text-white/70">Best Author and Book Reviews</p>
+                <h3 className="text-xl font-bold">{siteName}</h3>
+                <p className="text-xs text-white/70">{siteTagline}</p>
               </div>
             </div>
             <p className="text-white/70 text-sm mb-6 max-w-sm mx-auto md:mx-0">
@@ -48,14 +86,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Contact Info */}
           <div className="text-center md:text-left">
-            <h4 className="text-white font-semibold mb-4">Categories</h4>
+            <h4 className="text-white font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2 text-white/70 text-sm">
-              <li><a href="/book-categories" className="hover:text-white transition-colors">Fiction</a></li>
-              <li><a href="/book-categories" className="hover:text-white transition-colors">Non-Fiction</a></li>
-              <li><a href="/book-categories" className="hover:text-white transition-colors">Mystery</a></li>
-              <li><a href="/book-categories" className="hover:text-white transition-colors">Romance</a></li>
+              {contactEmail && (
+                <li>
+                  <span>Email: </span>
+                  <a href={`mailto:${contactEmail}`} className="hover:text-white transition-colors">
+                    {contactEmail}
+                  </a>
+                </li>
+              )}
+              {contactPhone && (
+                <li>
+                  <span>Phone: </span>
+                  <a href={`tel:${contactPhone}`} className="hover:text-white transition-colors">
+                    {contactPhone}
+                  </a>
+                </li>
+              )}
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
         </div>
