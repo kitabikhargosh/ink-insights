@@ -92,6 +92,9 @@ const Header = () => {
           <a href="/authors" className="text-book-text hover:text-book-primary transition-colors">
             Authors
           </a>
+          <a href="/books" className="text-book-text hover:text-book-primary transition-colors">
+            Books
+          </a>
           <a href="/collection" className="text-book-text hover:text-book-primary transition-colors">
             Collection
           </a>
@@ -127,6 +130,9 @@ const Header = () => {
             </a>
             <a href="/authors" className="block py-2 text-book-text hover:text-book-primary transition-colors">
               Authors
+            </a>
+            <a href="/books" className="block py-2 text-book-text hover:text-book-primary transition-colors">
+              Books
             </a>
             <a href="/collection" className="block py-2 text-book-text hover:text-book-primary transition-colors">
               Collection

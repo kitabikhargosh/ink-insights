@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Reviews from "./pages/Reviews";
 import BookReviews from "./pages/BookReviews";
 import Authors from "./pages/Authors";
+import Books from "./pages/Books";
 import Collection from "./pages/Collection";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/reviews" element={<BookReviews />} />
           <Route path="/book-reviews" element={<Reviews />} />
           <Route path="/authors" element={<Authors />} />
+          <Route path="/books" element={<Books />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />
